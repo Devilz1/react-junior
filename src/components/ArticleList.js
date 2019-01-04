@@ -2,12 +2,10 @@ import React from 'react'
 import Article from "./Article";
 
 export default function ArticleList({articles}){
-    const articleElements = articles.map(article => <li key={article.id}><Article article = {article}/></li>)
+    const articleElements = articles.map(article => <div className="col-md-4" key={article.id}><Article article = {article}/></div>)
     return(
-        <ul>
+        <div className={"row"}>
             {articleElements}
-        </ul>
+        </div>
     )
 }
-
-console.log()

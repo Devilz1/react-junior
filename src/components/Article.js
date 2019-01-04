@@ -13,19 +13,22 @@ class Article extends Component{
 
     render(){
         const {article} = this.props
-        const bodyArticle = this.state.isOpen && <section>{article.text}</section>
+        const bodyArticle = this.state.isOpen && <section className={"card-text"}>{article.text}</section>
 
         return (
-            <div className = "one-block">
-                <h2>
-                    {article.title}
-                </h2>
-                {bodyArticle}
-                <br/>
-                <button onClick={this.handleClick}>
-                    {this.state.isOpen ? "Закрыть" : "Открыть"}
-                </button>
-                <h4>Creation date: {(new Date(article.date)).toDateString()}</h4>
+            <div className = "card my-3">
+                <div className="card-header d-flex justify-content-between align-content-center">
+                    <h2 className={"card-title float-left"}>
+                        {article.title}
+                    </h2>
+                    <button className={"card-link float-right align-self-center"} onClick={this.handleClick}>
+                        {this.state.isOpen ? "Закрыть" : "Открыть"}
+                    </button>
+                </div>
+                <div className="card-body">
+                    {bodyArticle}
+                    <h6 className={"card-subtitle text-muted my-4"}>Creation date: {(new Date(article.date)).toDateString()}</h6>
+                </div>
             </div>
         )
     }
