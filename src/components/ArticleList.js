@@ -9,3 +9,5 @@ export default function ArticleList({articles}){
         </ul>
     )
 }
+
+console.log()
